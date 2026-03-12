@@ -1,0 +1,278 @@
+/* ====================== CONFIGURAÇÕES ====================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --claro: #e2e8f0;
+    --vidro: rgba(255,255,255,.12);
+}
+
+/* ====================== LAYOUT ====================== */
+
+body{
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+
+/* NAVBAR */
+
+.navegacao{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15,23,42,.75);
+    backdrop-filter: blur(10px);
+    padding: 1.4rem;
+    z-index: 99;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: 2.6rem;
+    list-style: none;
+}
+
+.menu-link{
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.menu-link::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:0;
+    height:2px;
+    background:linear-gradient(90deg,var(--primaria),var(--secundaria));
+    transition:.4s;
+}
+
+.menu-link:hover::after{ width:100%; }
+
+/* ====================== HERO ====================== */
+
+.cabecalho{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    padding-top:6rem;
+}
+
+.foto-perfil{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    border:4px solid var(--vidro);
+    box-shadow:0 0 25px rgba(79,70,229,.35);
+    object-fit: contain;
+    background-color: black;
+    animation:flutuar 6s ease-in-out infinite;
+    border-color: white;
+}
+
+h1{
+    font-size:3rem;
+    color:var(--primaria);
+    margin-top:20px;
+}
+
+.cabecalho-sub-titulo{
+    font-size:1.2rem;
+    opacity:.85;
+    max-width:550px;
+}
+
+/* ====================== SEÇÕES ====================== */
+
+.sobre, .projetos, .contatos{
+    padding:6rem 2rem;
+}
+
+.sobre-titulo, .projetos-titulo, .contatos-titulo{
+    font-size:2.4rem;
+    text-align:center;
+    margin-bottom:2.5rem;
+}
+
+.sobre-caixa{
+    background:rgba(255,255,255,.07);
+    border:1px solid var(--vidro);
+    border-radius:16px;
+    backdrop-filter:blur(8px);
+    padding:2rem;
+    margin:auto;
+    max-width:900px;
+    line-height:1.6rem;
+}
+
+/* ====================== SKILLS ====================== */
+
+#skills .sobre-caixa{
+    text-align:center;
+    transition:.4s;
+}
+
+#skills .sobre-caixa:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(79,70,229,.25);
+}
+
+/* ====================== TRAJETÓRIA ====================== */
+
+#trajetoria p{ font-size:1.1rem; opacity:.9; }
+
+/* ====================== PROJETOS ====================== */
+
+.projetos-caixa{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    gap:2rem;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+
+.projetos-card{
+    background:rgba(255,255,255,.06);
+    border-radius:12px;
+    border:1px solid var(--vidro);
+    overflow:hidden;
+    transition:.45s;
+    cursor:pointer;
+}
+
+.projetos-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.projetos-card:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 8px 25px rgba(124,58,237,.28);
+}
+
+.caixa-textos-projeto{
+    padding:1.5rem;
+    line-height:1.4rem;
+}
+
+/* ====================== SERVIÇOS / CERTIFICAÇÕES ====================== */
+
+#servicos .sobre-caixa p,
+#certificacoes .sobre-caixa p{
+    text-align:center;
+    font-size:1.1rem;
+}
+
+/* ====================== CONTATO ====================== */
+
+.formulario-contato{
+    max-width:600px;
+    margin:auto;
+    background:rgba(255,255,255,.07);
+    border-radius:14px;
+    padding:2rem;
+    border:1px solid var(--vidro);
+    backdrop-filter:blur(8px);
+}
+
+.campo-form{
+    width:100%;
+    padding:1rem;
+    background:rgba(255,255,255,.05);
+    border-radius:8px;
+    border:1px solid var(--vidro);
+    font-size:1rem;
+    color:var(--claro);
+    outline:none;
+    transition:.3s;
+}
+
+.campo-form:focus{
+    border-color:var(--secundaria);
+    box-shadow:0 0 12px rgba(124,58,237,.4);
+}
+
+.botao-form{
+    background:linear-gradient(45deg,var(--primaria),var(--secundaria));
+    padding:1rem;
+    border:none;
+    border-radius:8px;
+    color:var(--claro);
+    font-weight:bold;
+    font-size:1.1rem;
+    margin-top:10px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.botao-form:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 22px rgba(79,70,229,.45);
+}
+
+/* ====================== FUNDO / EFEITOS ====================== */
+
+.particulas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity:.45;
+    background:
+        radial-gradient(circle at 15% 30%,var(--primaria) 0%,transparent 28%),
+        radial-gradient(circle at 85% 80%,var(--secundaria) 0%,transparent 28%),
+        var(--escuro);
+}
+
+/* ====================== ANIMAÇÃO ====================== */
+
+@keyframes flutuar{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-18px); }
+}
+
+/* ====================== RESPONSIVIDADE ====================== */
+
+@media(max-width:768px){
+    .menu{
+        gap:1.4rem;
+        font-size:.9rem;
+    }
+    .foto-perfil{
+        width:250px;
+        height:250px;
+    }
+    h1{ font-size:2.4rem; }
+}
+
+@media(max-width:480px){
+    .menu{ display:none; } /* opcional — posso criar menu mobile se quiser */
+    .sobre, .projetos, .contatos{ padding:5rem 1rem; }
+    .sobre-caixa{ padding:1.6rem; }
+    h1{ font-size:2rem; }
+    .cabecalho-sub-titulo{ font-size:1rem; }
+}
